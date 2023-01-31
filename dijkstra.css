@@ -1,0 +1,346 @@
+
+:root {
+	/*Sharon*/
+	/*Schriftfarbe*/
+    --text-grau: #4d4d4d; 
+    --text-weis: #f8f8f8;
+    --text-light: #f6f6f6;
+    --text-dunkel: #002878;
+    --text-dunkel2: #1A3760D4;
+    --text-rot: #9C132E;
+    --text-gruen: #80ba24;
+    --box-shadow:0px 0px 50px 0px rgb(0 0 0/10%);
+    --bg-blau: rgb(243, 255, 249);
+    --bg-rot: rgb(254,247,252);
+    --bg-gelb: rgb(255,255,246);
+    --bg-lila: rgb(252, 246, 255);
+
+    /*Schriftart*/
+    --font-poppins: "Poppins",'sans-serif'; /*Google fonts */
+    /* Farbverlauf*/
+    --bg-farbverlauf:linear-gradient(to right, #80ba24, #4d750d);
+    --bg-farbverlauf-dunkelGruen:linear-gradient(to right, #b9cc8f, #a2bf60);
+    --bg-farbverlauf-lime:linear-gradient(to right, #e3f7de, #e3ebdb);
+
+    /*Bilder*/
+    --bg-cover:url('./assets/bgimg1.png');
+    --bg-image1:url('./assets/img1.png');
+    --bg-image2:url('./assets/img2.png');
+    --bg-image3:url('./assets/img3.png');
+	/*Sharon*/
+
+	/*Farbpalette*/
+	--thm-hausgruen: #80ba24;
+	--thm-hausgrau: #4a5c66; 
+	--accent-color: #362f4b;
+	--bgColorDarker: #ececec;
+	--bgColorLighter: #fcfcfc;
+	--insideBorderColor: lightgray;
+	--accent-color2: #A65967;
+	/*Farbpalette*/
+}
+
+body {
+	font-size: 1em;
+	font-family: Arial;
+	background: #eee;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+/*button {
+	width:  25%;
+	margin: 15px;
+	padding: 15px 30px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: var(--thm-hausgruen);
+	background: transparent;
+	transition: ease-out 0.5s;
+	border: 2px solid var(--thm-hausgruen);
+	border-radius: 10px;
+	box-shadow: inset 0 0 0 0 var(--thm-hausgruen);
+}
+
+button:hover {
+	color: white;
+	box-shadow: inset 0 -100px 0 0 var(--thm-hausgruen);
+}*/
+
+#button_reset, #button_kantengewicht, #button_dijkstra {
+	width:  25%;
+	margin: 15px;
+	padding: 15px 30px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: var(--thm-hausgruen);
+	background: transparent;
+	transition: ease-out 0.5s;
+	border: 2px solid var(--thm-hausgruen);
+	border-radius: 10px;
+	box-shadow: inset 0 0 0 0 var(--thm-hausgruen);
+}
+
+#button_reset:hover, #button_kantengewicht:hover, #button_dijkstra:hover {
+	color: white;
+	box-shadow: inset 0 -100px 0 0 var(--thm-hausgruen);
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+	width: 1500px;
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: var(--thm-hausgrau);
+}
+
+p {
+	display: flex;
+	justify-content: center;
+	width: 1500px;
+	margin: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: var(--thm-hausgruen);
+	background: transparent;
+}
+  
+.button_container {
+	width: 1500px;
+	display: flex;
+	justify-content: center;
+	flex-flow: row;
+	list-style: none;
+	margin-top: 0px;
+	gap: 0px;
+}
+
+.baseAnim:hover {
+	opacity: 0;
+}
+
+.stopAnim:hover {
+	opacity: 1;
+}
+
+.dijkstra_wegfindung {
+	display: relative;
+}
+
+#wegfindung_basis {
+	width: 1500px;
+	background-image: url("../Hintergrund_variation-002.png");
+	background-size: 1500px 525px;
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+#wegfindung_kantenoverlay {
+	position: absolute;
+	top: 125px;
+	left: 110px;
+	width: 1500px;
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+
+/*Table template https://codepen.io/blackfrom80s/pen/ZEoVYyx*/
+table {
+	width: 1500px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--accent-color2);
+	border-collapse: collapse;
+	color: var(--thm-hausgrau);
+	table-layout: fixed;
+}
+
+table thead tr {
+	color: whitesmoke;
+	background-color: var(--accent-color2);
+	font-size: .7rem;
+	font-weight: bold;
+}
+
+table tbody tr {
+	border: 1px solid var(--insideBorderColor);
+	background-color: var(--bgColorDarker);
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: var(--bgColorLighter);
+}
+
+table th {
+	font-weight: bold;
+	letter-spacing: 0.075rem;
+	font-weight: bold;
+}
+
+table th,
+table td {
+	padding: 0.75rem 1rem;
+	font-size: .7rem;
+	font-weight: normal;
+	text-align: left;
+}
+
+table th {
+	font-weight: bold;
+	letter-spacing: 0.075rem;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+	text-align: right;
+}
+
+
+
+
+
+/*sharon*/
+
+*>*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration:none;
+}
+ul{
+    list-style-type: none;
+}
+
+#nav{
+	position:absolute;
+    top: 0; left:0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background:var(--text-light);
+    flex-direction: column;
+}
+
+#nav .collapse{ 
+    max-height: 0px;
+    overflow-y: hidden; /*alle navigationselemente werden ausgeblendet*/
+    transition: all 0.9s ease; /* smooth slide*/
+}
+#nav .collapse ul{
+    flex-direction:column;
+    text-align:center;
+    padding:0 3rem;
+}
+
+#nav .collapse ul > li{
+    padding: 0 1.5rem;
+    line-height: 5rem;
+    font-size: 1.9em;
+
+}
+
+#nav .toggle-btn> button{ /*icon von bootstrap*/
+    font-size: 2em; 
+    position: absolute;
+    right: 0; top: 0;
+    padding: 1rem;
+    color: var(--text-dunkel2);
+
+}
+
+#nav .flex-initial ul button{ /* plan Starten button entfernt*/
+    display: none;
+}
+
+.active{ /* ermöglicht es die Höhe des Navigationsmenüs zu erweitern, wenn ich auf das Icon klicke (Toggle) ( mit hilfe von JS)*/
+    max-height: 50vh !important;
+}
+
+.container-fluid{ /*navigation*/
+    width:98%;
+}
+
+
+
+
+
+.flex{
+    display:flex;
+}
+
+.font-poppins{
+    font-family:var(--font-poppins);
+}
+
+.text-dunkel{
+    color:var(--text-dunkel);
+}
+
+.text-2xl{
+    font-size: 3.5em;
+    line-height:  5rem
+}
+
+.btn{
+    border: none;
+    background-color:transparent;
+    cursor: pointer;
+}
+
+.btn-primary{
+    padding:.8rem 2rem; 
+    border-radius: 50px;
+    font-family:var(--font-poppins);
+    font-weight: bold;
+}
+
+.collapse{
+	max-height: initial!important;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.link{
+    color:var(--text-dunkel2);
+    font-weight: bold;
+}
+
+.link:hover{
+    color: var(--text-rot);
+}
+
+.flex-initial{
+    flex:0 1 auto; 
+}
+
+.bg-farbverlauf{
+    background:var(--bg-farbverlauf);
+}
+
+.btn-shadow{
+    box-shadow:var(--box-shadow);
+}
+
+.text-weis{
+    color:var(--text-weis);
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}

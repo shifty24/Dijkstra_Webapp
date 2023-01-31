@@ -1,160 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-:root {
-	/*Farbpalette*/
-	--thm-hausgruen: #80ba24;
+/*-------------------------Variablen--------------------------------------*/
+
+:root{
+    /*Schriftfarbe*/
+    --text-grau: #4d4d4d; 
+    --text-weis: #f8f8f8;
+    --text-light: #f6f6f6;
+    --text-dunkel: #002878;
+    --text-dunkel2: #1A3760D4;
+    --text-rot: #9C132E;
+    --text-gruen: #80ba24;
+    --box-shadow:0px 0px 50px 0px rgb(0 0 0/10%);
+    --bg-blau: rgb(243, 255, 249);
+    --bg-rot: rgb(254,247,252);
+    --bg-gelb: rgb(255,255,246);
+    --bg-lila: rgb(252, 246, 255);
+
+    /*Schriftart*/
+    --font-poppins: "Poppins",'sans-serif'; /*Google fonts */
+    /* Farbverlauf*/
+    --bg-farbverlauf:linear-gradient(to right, #80ba24, #4d750d);
+    --bg-farbverlauf-dunkelGruen:linear-gradient(to right, #b9cc8f, #a2bf60);
+    --bg-farbverlauf-lime:linear-gradient(to right, #e3f7de, #e3ebdb);
+
+    /*Bilder*/
+    --bg-cover:url('./assets/bgimg1.png');
+    --bg-image1:url('./assets/img1.png');
+    --bg-image2:url('./assets/img2.png');
+    --bg-image3:url('./assets/img3.png');
+    
+    /*Anton*/
+    --thm-hausgruen: #80ba24;
 	--thm-hausgrau: #4a5c66; 
 	--accent-color: #362f4b;
 	--bgColorDarker: #ececec;
 	--bgColorLighter: #fcfcfc;
 	--insideBorderColor: lightgray;
 	--accent-color2: #A65967;
-	/*Farbpalette*/
+    /*Anton*/
+
 }
 
-body {
-	
-	font-size: 1em;
-	font-family: Arial;
-	background: #eee;
-	display: flex;
-	flex-flow: column;
-	align-items: center;
+*>*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-button {
-	width:  25%;
-	margin: 15px;
-	padding: 15px 30px;
-	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	color: var(--thm-hausgruen);
-	background: transparent;
-	transition: ease-out 0.5s;
-	border: 2px solid var(--thm-hausgruen);
-	border-radius: 10px;
-	box-shadow: inset 0 0 0 0 var(--thm-hausgruen);
+a{
+    text-decoration:none;
+}
+ul{
+    list-style-type: none;
+}
+
+body{
+    width: 100%;
+    background:url('./assets/background2.png');
+    background-size: cover;
+}
+/*-------------------------Variablen--------------------------------------*/
+/*-------------------------Klassen--------------------------------------*/
+
+.text-dunkel{
+    color:var(--text-dunkel);
+}
+.text-weis{
+    color:var(--text-weis);
+}
+
+.text-light{
+    color:var(--text-light);
+}
+
+.text-gray{
+    color:var(--text-grau);
+}
+
+.text-rot{
+    color:var(--text-rot);
+}
+.text-gruen{
+    color:var(--text-gruen);
+}
+
+.bg-farbverlauf{
+    background:var(--bg-farbverlauf);
+}
+.bg-farbverlauf-minzgruen{
+    background:var(--bg-farbverlauf-dunkelGruen);
+}
+.bg-farbverlauf-lime{
+    background:var(--bg-farbverlauf-lime);
+}
+.bg-farbverlauf-rot{
+    background:var(--bg-rot);
+}
+.bg-farbverlauf-blau{
+    background:var(--bg-blau);
+}
+.bg-farbverlauf-gelb{
+    background:var(--bg-gelb);
+}
+.bg-farbverlauf-lila{
+    background:var(--bg-lila);
+}
+.font-poppins{
+    font-family:var(--font-poppins);
+}
+.text-center{
+    text-align: center;
+}
+
+.text-sm{
+    font-size: 1em;
+    line-height:  1.5em;
+
+}
+.text-md{
+    font-size: 1.5em;
+}
+.text-xlg{
+    font-size: 3.5em;
+    line-height:  5rem
+}
+
+
+.text-xl{
+    font-size: 1.5em;
+}
+
+.text-2xl{
+    font-size: 3.5em;
+    line-height:  5rem
+}
+.font-bold{
+    font-weight: bold;
+}
+
+.flex{
+    display:flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-initial{
+    flex:0 1 auto; 
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.justify-center{
+    justify-content: center;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+.container{
+    width: 100%;
+}
+.container-fluid{ /*navigation*/
+    width:98%;
+}
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.py-2{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-5{
+    padding-top: 1.5rem;
+    padding-bottom:1.5rem;
+}
+
+.py-10{
+    padding-top: 4.5rem;
+}
+.px-5{
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+}
+
+.px-10{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+
+.link{
+    color:var(--text-dunkel2);
+    font-weight: bold;
+}
+
+.link:hover{
+    color: var(--text-rot);
+}
+
+.btn{
+    border: none;
+    background-color:transparent;
+    cursor: pointer;
+}
+.btn-primary{
+    padding:.8rem 2rem; 
+    border-radius: 50px;
+    font-family:var(--font-poppins);
+    font-weight: bold;
+}
+
+.btn-shadow{
+    box-shadow:var(--box-shadow);
+}
+.btn-primary:hover{
+    background: var(--bg-farbverlauf-dunkelGruen);
+}
+.bg-cover{
+    background: var(--bg-cover);
+    object-fit: fill;
+}
+.d-inline{
+    display:inline-block;
+}
+
+.d-block{
+    display: block;
+}
+
+.grid{
+    display: grid;
+}
+
+.cols-1{
+    grid-template-columns: repeat(1, minmax(0,1fr));
+}
+
+.btn-shadow{
+    box-shadow:(--box-shadow);
+}
+
+/*-------------------------Klassen--------------------------------------*/
+
+/*-------------------------Media Query--------------------------------------*/
+
+/* für kleinere bildschirme (640px)*/
+@media (min-width:640px) {
+    .container{
+        max-width:  640px;
+    }
+    .sm-text-xl{
+        font-size: 3em;
+    }
+    
+}
+
+/* für Großbildschirm (768px)*/
+@media (min-width:768px) {
+    .container{
+        max-width:  768px;
+    }
+    .md-text-left{
+        text-align:left;
+    }
+    .md-mx-initial{
+        margin: initial;
+    }
+    .md-cols-2{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        	
+    }
+}
+/* für Großbildschirm (1024px)*/
+@media (min-width:1024px) {
+    .container{
+        max-width:  1024px;
+    }
+
+    #nav .toggle-btn> button{ /* ab 1024px verschwindet der buttoün*/
+        display: none;
+   
+    }
+    #nav{
+        flex-direction: row!important;
+        padding-left: 6rem!important;
+        padding-right: 6rem !important;
+    }
+    .collapse{
+        max-height: initial!important;
+    }
+
+    .collapse ul{
+        flex-direction: row !important;
+    }
+    .active{ /*wenn es größer als 1024px*/
+        max-height: 100%;
+    }
+    .lg-cols-2{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+    
+    .lg-cols-3{
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+    
+}
+/* für Großbildschirm (1024px)*/
+@media (min-width:1280px) {
+    .container{
+        max-width:  1280px;
+    }
+    #nav{
+        background: transparent!important;
+    }
+
+    #nav .flex-initial ul button{
+        display: inline-block !important;
+
+    
+    }
+}
+/*-------------------------/Media Query--------------------------------------*/
+
+
+/*-------------------------Navigation Style--------------------------------------*/
+#nav{
+    position: absolute;
+    top: 0; left:0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background:var(--text-light);
+    flex-direction: column;
+}
+
+#nav .collapse{ 
+    max-height: 0px;
+    overflow-y: hidden; /*alle navigationselemente werden ausgeblendet*/
+    transition: all 0.9s ease; /* smooth slide*/
+}
+#nav .collapse ul{
+    flex-direction:column;
+    text-align:center;
+    padding:0 3rem;
+}
+
+#nav .collapse ul > li{
+    padding: 0 1.5rem;
+    line-height: 5rem;
+    font-size: 1.9em;
+
+}
+
+#nav .toggle-btn> button{ /*icon von bootstrap*/
+    font-size: 2em; 
+    position: absolute;
+    right: 0; top: 0;
+    padding: 1rem;
+    color: var(--text-dunkel2);
+
+}
+
+#nav .flex-initial ul button{ /* plan Starten button entfernt*/
+    display: none;
+}
+
+.active{ /* ermöglicht es die Höhe des Navigationsmenüs zu erweitern, wenn ich auf das Icon klicke (Toggle) ( mit hilfe von JS)*/
+    max-height: 50vh !important;
+}
+/*-------------------------/Navigation Style--------------------------------------*/
+
+/*-------------------------Banner Style---------------------------------------*/
+#site-main .banner-area{
+    width: 100%;
+    position: relative;
+    z-index: -99;
+
+}
+#site-main .banner-area .banner-title{
+    height:75vh;
+    padding: 16rem;
+
+}
+#site-main .banner-area .banner-title{
+    padding: 30em 0;
+}
+
+#site-main .banner-area .banner-title.grid-one p{
+    width: 80%;
+}
+
+/*-------------------------/Banner Style--------------------------------------*/
+
+
+/*----------------------THMCampus--------------------------------------*/
+#site-main .plan > .grid{
+    column-gap: 10em;
+}
+#site-main .plan .grid-images{
+
+    display: grid;
+    grid-template-columns: repeat(16,minmax(10px,1fr));/*--16 coloums, 10px width, max 1fraction---*/
+    grid-template-rows: repeat(8,minmax(100px, 1fr));
+}
+#site-main .plan .grid-images .item-one{ 
+    background: var(--text-grau);
+    grid-column-start:1;
+    grid-column-end:8;
+    grid-row-start:2;
+    grid-row-end:5;
+    background:var(--bg-image1)no-repeat;
+    background-size:cover;
+    border-radius: 8px;
+    filter: blur(1px);
+
+}
+
+#site-main .plan .grid-images .item-two{
+    background: var(--text-grau);
+    grid-column-start:9;
+    grid-column-end:16;
+    grid-row-start:1;
+    grid-row-end:4;
+    background:var(--bg-image2)no-repeat;
+    background-size:cover;
+    border-radius: 8px;
+    filter: blur(1px);
+
+}
+#site-main .plan .grid-images .item-three{
+    grid-area: 3/4/8/14;
+    background: var(--bg-image3)no-repeat;
+    background-size:cover;
+    border-radius:8px;
+    z-index:99;
+}
+
+/*----------------------/THMCampus--------------------------------------*/
+
+/*----------------------CampusPlan--------------------------------------*/
+#site-main .map-campusPlan{
+    padding: 7em 0;
+}
+ 
+  #site-main .map-campusPlan .button-container {
+    text-align: center; /* Zentriere den Button */
+    padding-top: 3em; 
   }
 
-button:hover {
-	color: white;
-	box-shadow: inset 0 -100px 0 0 var(--thm-hausgruen);
-}
 
-h1 {
-	display: flex;
-	justify-content: center;
-	width: 1500px;
-	text-align: center;
-	font-size: 32px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	text-decoration: none;
-	color: var(--thm-hausgrau);
-}
-
-p {
-	display: flex;
-	justify-content: center;
-	width: 1500px;
-	margin: 15px;
-	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	text-decoration: none;
-	color: var(--thm-hausgruen);
-	background: transparent;
-}
   
-.button_container {
-	width: 1500px;
-	display: flex;
-	justify-content: center;
-	flex-flow: row;
-	list-style: none;
-	margin-top: 0px;
-	gap: 0px;
+/*----------------------/CampusPlan--------------------------------------*/
+
+/*----------------------Counter--------------------------------------*/
+#site-main .zaehler{
+    padding: 7em 0;
 }
 
-.baseAnim:hover {
-	opacity: 0;
+#site-main .zaehler .grid-one p{
+    width: 80%;
 }
 
-.stopAnim:hover {
-	opacity: 1;
+#site-main .zaehler .count-box{
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+#site-main .zaehler .count-box .grid{
+    display: inline-grid;
+    grid-gap:2px;
+    border-radius: 20px;
+    background-color: var(--text-light);
+
+}
+#site-main .zaehler .count-box .grid >div{
+    background-color: white;
+    padding:2em 2.5em;
+    text-align: center;
 }
 
-.dijkstra_wegfindung {
-	display: relative;
+/*----------------------/Counter--------------------------------------*/
+/*----------------------footer--------------------------------------*/
+#footer{
+    margin-top:17em;
+  }
+
+#footer .grid{
+    column-gap:3em;
+    padding:6em 0;
+
+  
 }
 
-#wegfindung_basis {
-	width: 1500px;
-	background-image: url("../Hintergrund_variation-002.png");
-	background-size: 1500px 525px;
-	font-weight: bold;
-	font-size: .8rem;
-}
+/*----------------------/footer--------------------------------------*/
 
-#wegfindung_kantenoverlay {
-	position: absolute;
-	top: 125px;
-	left: 110px;
-	width: 1500px;
-	font-weight: bold;
-	font-size: .8rem;
-}
-
-
-/*Table template https://codepen.io/blackfrom80s/pen/ZEoVYyx*/
-table {
-	width: 1500px;
-	margin: 0;
-	padding: 0;
-	border: 1px solid var(--accent-color2);
-	border-collapse: collapse;
-	color: var(--thm-hausgrau);
-	table-layout: fixed;
-}
-
-table thead tr {
-	color: whitesmoke;
-	background-color: var(--accent-color2);
-	font-size: .7rem;
-	font-weight: bold;
-}
-
-table tbody tr {
-	border: 1px solid var(--insideBorderColor);
-	background-color: var(--bgColorDarker);
-}
-
-table tbody tr:nth-child(odd) {
-	background-color: var(--bgColorLighter);
-}
-
-table th {
-	font-weight: bold;
-	letter-spacing: 0.075rem;
-	font-weight: bold;
-}
-
-table th,
-table td {
-	padding: 0.75rem 1rem;
-	font-size: .7rem;
-	font-weight: normal;
-	text-align: left;
-}
-
-table th {
-	font-weight: bold;
-	letter-spacing: 0.075rem;
-}
-
-table th:nth-child(4),
-table td:nth-child(4) {
-	text-align: right;
-}
