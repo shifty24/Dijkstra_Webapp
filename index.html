@@ -1,196 +1,251 @@
 <!DOCTYPE html>
-
 <html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>THM Campus Maps</title>
+    
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- stylesheet-->
+    <link href="main.css" type="text/css" rel="stylesheet">
 
-    <head>
+</head>
+<body>
+<!-----------------Header----------------------->
+    <header class="container-fluid">
+        <nav id="nav" class="flex font-poppins">
 
-        <meta charset="utf-8">
-        <title>Dijkstra Webapp</title>
-        <link rel="stylesheet" href="style.css">
+            <div>
+                <a href="index.html" class="text-dunkel text-2xl">Campus Maps</a>
+            </div>
+            <div class="toggle-btn">
+                <button class="btn"> 
+                    <i class="bi bi-list"></i>  <!-----------------von bootstrap.icons kopiert(für den ican neben digital)----------------------->
+                </button>
+            </div>
+            <div class="collapse flex-grow"><!----------------- alle Globalen Klassen aus der CSS Datei wird hier verwendet----------------------->
+                <ul class="flex">
+                    <li>
+                        <a href="index.html" class="link">Home</a>
+                      </li>
+                   <li>
+                    <a href="#ueber-uns" class="link">Dijkstra-Algorithmus</a>
+                   </li>
+                   <li>
+                    <a href="#campus-plan" class="link">Ablauf</a>
+                  </li>
+                  <li>
+                    <a href="#kontakt"class="link">Kontakt</a>
+                  </li>
+                </ul>
 
-    </head>
+            </div>
+            <div class="flex-initial">
+               <ul class="flex">
+                <a id="campus-plan-button" href="dijkstra.html" class="button">Campus-Map</a><!----------------- hover, buttonfarbe, text farbe und in Großbuchstaben----------------------->
 
-    <body>
+               </ul>
 
-      
-        <main>
+            </div>
+        </nav>
 
-            <h1>THM campusmaps</h1>
-            <p id="startanweisung">Zum Start der Dijkstra-Wegfindung: Wähle Startpunkt!</p>
+    </header>
+<!-----------------/Header----------------------->
+<!-----------------Main----------------------->
 
-            <section class="dijkstra_wegfindung">
+<main id="site-main">
+    <!----------------------Banner-------------------------------------->
+    <section class="banner-area font-poppins">
+        <div class="container mx-auto banner-title">
+            <div class="grid cols-1 lg-cols-2">
+                <div class="grid-one text-center md-text-left">
+            <div class="title">
+                <span class="d-inline btn btn-gruen bg-farbverlauf-lime text-gruen animate__animated animate__fadeInUp"> Willkommen</span>
+                <div class="py-2 text-dunkel text-2xl font-bold">
+                <span class="d-block animate__animated animate__fadeInDown animate__faster">Sichere dir</span>
+                <span class="d-block animate__animated animate__fadeInDown animate__fast">dir den Kürzesten Weg</span>
 
-                <svg id="wegfindung_kantenoverlay" width="1500px" height="525px" viewBox="0 0 1500 525" fill="none" display="none">
+            </div>
+        </div>
+        <div class="py-5 animate__animated animate__fadeInUp text-grau ">
+            <p>Für Neuankömmlinge, kann es anfangs ein Problem sein, sich sofort auf dem 
+                Campus zurecht zu finden und schnellstmöglich von einer Vorlesung zur 
+                nächsten zu kommen. Durch das Auswählen Ihres Standortes und Ihr Wunschziel, 
+                wird Ihnen dadurch die beste Route für Sie berechnet und angezeigt.</p>
+        </div>
+                </div>
+        </div>
+    </section>
 
-                    <text x="680" y="45" fill="white" aria-hidden="true">4</text>
-                    <text x="790" y="63" fill="white" aria-hidden="true">3</text>
-                    <text x="850" y="54" fill="white" aria-hidden="true">2</text>
-                    <text x="636" y="108" fill="white" aria-hidden="true">4</text>
-                    <text x="775" y="146" fill="white" aria-hidden="true">2</text>
-                    <text x="840" y="148" fill="white" aria-hidden="true">3</text>
-                    <text x="800" y="194" fill="white" aria-hidden="true">1</text>
-                    <text x="744" y="207" fill="white" aria-hidden="true">2</text>
-                    <text x="830" y="228" fill="white" aria-hidden="true">2</text>
-                    <text x="658" y="220" fill="white" aria-hidden="true">3</text>
-                    <text x="728" y="241" fill="white" aria-hidden="true">3</text>
-                    <text x="808" y="262" fill="white" aria-hidden="true">3</text>
-                    <text x="573" y="269" fill="white" aria-hidden="true">1</text>
-                    <text x="652" y="296.5" fill="white" aria-hidden="true">1</text>
-                    <text x="700" y="330" fill="white" aria-hidden="true">2</text>
-                    <text x="602" y="316" fill="white" aria-hidden="true">2</text>
 
-                </svg>
+    <!----------------------/Banner-------------------------------------->
+    
+    <!----------------------/CampusLife-------------------------------------->
+    <!----------------------THMCampus-------------------------------------->
+    <section id="ueber-uns" class="container mx-auto plan">
+        <div class="grid cols-1 lg-cols-2 text-center md-text-left">
+            <div class="grid-images ">
+                <div data-rellax-speed="2"class="item-one rellax animate__animated animate__fadeInUp"></div>
+                <div data-rellax-speed="-1" class="item-two rellax animate__animated animate__fadeInUp"></div>
+                <div data-rellax-speed="1" class="item-three rellax animate__animated animate__fadeInUp"></div>
+            </div>
+            <div class="py-10">
+                <span class="d-inline btn btn-gruen bg-farbverlauf-lime text-gruen animate__animated animate__fadeInUp"> Dijkstra-Algorithmus</span>
+                <div class="font-poppins">
+                    <h1 class="text-lg text-dunkel py-5 animate__animated animate__fadeInDown animate__fast">
+                        Der kürzeste Weg zum Ziel
+                    </h1>
+                    <p class="py-5 text-grau animate__animated animate__fadeInUp">
+                        Der Dijkstra-Algorithmus ist ein Algorithmus, um den kürzesten Pfad von 
+                        einem gegebenem Startknoten zu anderen Knoten in einem Netzwerk aus solchen zu ermitteln.Dazu nutzt der 
+                        Algorithmus ausgehende Kanten und deren Distanzwert zu den Nachbarknoten indem er diese festhält und 
+                        miteinander vergleicht.Dies geschieht für jeden Knoten im Netzwerk wobei vorherige Distanzen zum jeweiligen 
+                        Knoten für den aktuellen Durchlauf mit einbezogen werden.
+                
+                
+                </div>
+                
 
-                <svg id="wegfindung_basis" width="1500px" height="525px" viewBox="0 0 1500 525" fill="none">
-                    <title>Kartenausschnitt Friedberger THM Campus</title>    
+            </div>
 
-                    <image class="baseAnim" href="Vektorgrafiken/A1  (hover).svg" x="800" y="176"></image>
-                    <image class="baseAnim" id="nodeA1" href="Vektorgrafiken/A1.svg" x="800" y="176" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A4  (hover).svg" x="652" y="158"></image>
-                    <image class="baseAnim" id="nodeA4" href="Vektorgrafiken/A4.svg" x="652" y="158" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A3  (hover).svg" x="680" y="185"></image>
-                    <image class="baseAnim" id="nodeA3" href="Vektorgrafiken/A3.svg" x="680" y="185" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A2 (hover).svg" x="793" y="207"></image>
-                    <image class="baseAnim" id="nodeA2" href="Vektorgrafiken/A2.svg" x="793" y="207" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A6  (hover).svg" x="635" y="260"></image>
-                    <image class="baseAnim" id="nodeA6" href="Vektorgrafiken/A6.svg" x="635" y="260" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A7  (hover).svg" x="560" y="227"></image>
-                    <image class="baseAnim" id="nodeA7" href="Vektorgrafiken/A7.svg" x="560" y="227" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A8  (hover).svg" x="510" y="267"></image>
-                    <image class="baseAnim" id="nodeA8" href="Vektorgrafiken/A8.svg" x="510" y="267" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/B2  (hover).svg" x="800" y="60"></image>
-                    <image class="baseAnim" id="nodeB2" href="Vektorgrafiken/B2.svg" x="800" y="60" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/B1  (hover).svg" x="710" y="75"></image>
-                    <image class="baseAnim" id="nodeB1" href="Vektorgrafiken/B1.svg" x="710" y="75" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/Bahnhof  (hover).svg" x="750" y="1"></image>
-                    <image class="baseAnim" id="nodeBahnhof" href="Vektorgrafiken/Bahnhof.svg" x="750" y="1" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/E1  (hover).svg" x="545" y="65"></image>
-                    <image class="baseAnim" id="nodeE1" href="Vektorgrafiken/E1.svg" x="545" y="65" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/Park  (hover).svg" x="593" y="295"></image>
-                    <image class="baseAnim" id="nodeParkhaus" href="Vektorgrafiken/Park.svg" x="593" y="295" onclick="SelectiveAnimStopper(this.id)"></image>
-                    <image class="baseAnim" href="Vektorgrafiken/A5 (hover).svg" x="670" y="281"></image>
-                    <image class="baseAnim" id="nodeA5" href="Vektorgrafiken/A5.svg" x="670" y="281" onclick="SelectiveAnimStopper(this.id)"></image>
 
-                    <line class="kanten" id="edge1" x1="805" y1="21" x2="574" y2="75" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge2" x1="805" y1="21" x2="763" y2="98" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge3" x1="805" y1="21" x2="840" y2="78" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge4" x1="574" y1="75" x2="698" y2="179" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge5" x1="763" y1="98" x2="825" y2="186" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge6" x1="840" y1="78" x2="870" y2="223" stroke="black" stroke-width="1.4"/>                   
-                    <line class="kanten" id="edge7" x1="825" y1="186" x2="790" y2="205" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge8" x1="790" y1="205" x2="698" y2="179" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge9" x1="790" y1="205" x2="870" y2="223" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge10" x1="698" y1="179" x2="600" y2="250" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge11" x1="790" y1="205" x2="686" y2="278" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge12" x1="870" y1="223" x2="762" y2="320" stroke="black" stroke-width="1.4"/>                   
-                    <line class="kanten" id="edge13" x1="600" y1="250" x2="564" y2="288" stroke="black" stroke-width="1.4"/>                    
-                    <line class="kanten" id="edge14" x1="686" y1="278" x2="640" y2="315" stroke="black" stroke-width="1.4"/>
-                    <line class="kanten" id="edge15" x1="762" y1="320" x2="640" y2="315" stroke="black" stroke-width="1.4"/>                
-                    <line class="kanten" id="edge16" x1="564" y1="288" x2="640" y2="315" stroke="black" stroke-width="1.4"/>
-                    
-                    <circle cx="824.5" cy="186" r="13.5" fill="#7FBA27"></circle>
-                    <text x="816" y="191" fill="black" aria-hidden="true">A1</text>
+        </div>
 
-                    <circle cx="696.5" cy="179" r="13.5" fill="#7FBA27"></circle>
-                    <text x="688" y="184" fill="black" aria-hidden="true">A4</text>
+    </section>
+    <!----------------------/THMCampus-------------------------------------->
 
-                    <circle cx="789.5" cy="204" r="13.5" fill="#7FBA27"></circle>
-                    <text x="781" y="209" fill="black" aria-hidden="true">A3</text>
+      <!----------------------Campus Plan---------------------------------->
+<section id="campus-plan" class="container mx-auto map-campusPlan">
+    <div class="grid cols-1  ">
+        <div class="text-center">
+            <div class="font-poppins md-text-left">
+                <span class=" btn btn-gruen bg-farbverlauf-lime text-gruen animate__animated animate__fadeInUp">Campus-Map</span>
+                <h1 class="text-lg text-dunkel py-5 animate__animated animate__fadeInUp"> Effiziente Campus-Navigation mit unserem Algorithmus </h1>
+                <p class="d-block text-grau mx-auto md-mx-initial animate__animated animate__fadeInUp">
+                    Für jeden Knoten im Netzwerk bietet es sich zunächst an einen Distanzwert für diesen festzuhalten. 
+                Jeder Knoten bekommt den Wert unendlich als kürzeste Distanz zu diesem eingetragen. Nun wird zu Beginn des 
+                Ablaufs ein Startknoten gewählt, wobei dieser den Distanzwert 0 zugewiesen bekommt um den Algorithmus eine 
+                Bedingung zu geben. Hiermit wird dem Algorithmus die Bedingung übertragen, welchen Knoten er betrachten soll. 
+                Des Weiteren wird ein Zielknoten gewählt. Im nächsten Schritt werden die Kantendistanzen zu den Nachbarknoten 
+                betrachtet. Deren Werte werden mit dem bisherigen Distanzwert addiert und zum aktuellen Knoten eingetragen, 
+                die zu den betrachteten Kanten führen und somit die zugeteilten Unendlichkeits-Werte zu ersetzen.
+                </p>
+                <p class="d-block py-2 text-grau mx-auto md-mx-initial animate__animated animate__fadeInUp">
+                    Die vermerkten Distanzwerte können als eine Art Warteschlange betrachtet werden, wobei im Anschluss an jede vollendete Knotenbetrachtung, 
+                    samt ausgehender Kanten und Distanzwertaktualisierungen, der Knoten mit der jeweils geringsten akkumulierten Distanz an 
+                    vorderster Stelle in der Schlange steht um abgearbeitet zu werden und um diesen entnehmen zu können. Nach und nach werden 
+                    nun alle Knoten in der Warteschlange betrachtet bis diese geleert ist. Der Weg, der am Ende den niedrigsten akkumulierten 
+                    Distanzwert von Startknoten bis zum Zielknoten besitzt, wird im Graph markiert.
+                </p>
+                </div>
+            <div class="button-container">
+                <a id="start-button" href="dijkstra.html"class=" button animate__animated animate__fadeInUp">zum Campus-Map</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <circle cx="869.5" cy="224" r="13.5" fill="#7FBA27"></circle>
-                    <text x="861" y="229" fill="black" aria-hidden="true">A2</text>
-      
-                    <circle cx="684.5" cy="279" r="13.5" fill="#7FBA27"></circle>
-                    <text x="676" y="284" fill="black" aria-hidden="true">A6</text>
+  
+  
+<!-------------------------Campus Plan---------------------------------->
+    
+    
+    <!----------------------Counter-------------------------------------->
+    <section class="container mx-auto zaehler">
+        <div class="grid cols-1 lg-cols-2">
+  <div class="grid-one text-center md-text-left">
+    <!-- Textinhalt hier -->
+                <span class="d-inline btn btn-gruen bg-farbverlauf-lime text-gruen animate__animated animate__fadeInUp">Feedback</span>
+                <div class="font-poppins">
+                    <h1 class="text-lg text-dunkel py-5 animate__animated animate__fadeInUp">
+                        Feedback von Mitstudierenden
+                    </h1>
+                    <p class="text-grau mx-auto md-mx-initial animate__animated animate__fadeInUp">
+                        Durch Befragungen unserer Mitstudierenden konnten wir durch zahlreiche Rückmeldungen unsere Webseite und 
+                        unsere Anwendung so optimieren, dass sie nicht nur unsere Ziele verfolgt, sondern auch ansprechend und 
+                        benutzerfreundlich wird.
+                    </p>
+                </div>
+            </div>
+                <div class="count-box">
+                    <div class="grid  btn-shadow font-poppins">
+                        <div class="item1 text-center">
+                            <h1 class="text-dunkel text-xl">10</h1>
+                            <span class="text-grau">Anzahl der Befragten Leute</span>
+                        </div>
+                        <div class="item2 text-center">
+                            <h1 class="text-dunkel text-xl">77%</h1>
+                            <span class="text-grau"> Umgesetztes Feedback</span>
+                        </div>
+                </div>
+            </div>
+    </section>
+    <!----------------------/Counter-------------------------------------->
 
-                    <circle cx="599.5" cy="249" r="13.5" fill="#7FBA27"></circle>
-                    <text x="591" y="254" fill="black" aria-hidden="true">A7</text>
  
-                    <circle cx="564.5" cy="288" r="13.5" fill="#7FBA27"></circle>
-                    <text x="556" y="293" fill="black" aria-hidden="true">A8</text>
+    
+   
+    
 
-                    <circle cx="837" cy="78" r="13.5" fill="#7FBA27"></circle>
-                    <text x="829" y="83" fill="black" aria-hidden="true">B2</text>
+</main>
 
-                    <circle cx="764" cy="97" r="13.5" fill="#7FBA27"></circle>
-                    <text x="756" y="102" fill="black" aria-hidden="true">B1</text>
-
-                    <rect x="774" y="15" height="15" width="63" fill="#005b8c"/>
-                    <text x="779" y="27" fill="white" aria-hidden="true">Bahnhof</text>
-
-                    <circle cx="574" cy="74" r="13.5" fill="#7FBA27"></circle>
-                    <text x="566" y="79" fill="black" aria-hidden="true">E1</text>
-      
-                    <circle cx="640" cy="314" r="13.5" fill="#005b8c"></circle>
-                    <text x="636" y="319" fill="white" aria-hidden="true">P</text>
+<!------------------------------------------------------/Main-------------------------------------------------------------------->
+<!------------------------------------------------------footer-------------------------------------------------------------------->
+<footer id="footer">
+    <section class ="container mx-auto py-10">
+      <div class="grid lg-cols-3 font-poppins">
         
-                    <circle cx="762.5" cy="319" r="13.5" fill="#7FBA27"></circle>
-                    <text x="754" y="324" fill="black" aria-hidden="true">A5</text>
+        <div id="kontakt" class="text-dunkel text-center md-text-left">
+            <h2 class="text-dunkel">Kontakt</h2>
+            <span>
+              Wilhelm-Leuschner-Straße 13,<br>
+              61169 Friedberg
+            </span>
+            <span class="d-block">06031/6040</span>
+            <span class="text-grau">info@thm.de</span>
+          </div>
 
-                </svg>   
+          <div id="service" class="text-dunkel text-center md-text-left">
+            <h2 class="text-dunkel">THM Jobportal</h2>
+            <span>THM Meinungsportal</span>
+            <span class="d-block">THM Dokumente</span>
+            <span class="text-grau">THM Magazin</span>
+          </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="2">Zusätzliche Gebäudeinformationen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>A2</td>
-                            <td>Labore, Telefonzentrale, Studierendenverwaltung</td>
-                        </tr>
-                        <tr>
-                            <td>A3</td>
-                            <td>Labore, ASTA, Bibliothek, Auslandsreferat, Zentrale Studienberatung, Schwerbehindertenvertretung</td>
-                        </tr>
-                        <tr>
-                            <td>A4</td>
-                            <td>Labore, ITS Infrastruktur, Placementcenter, Personalrat</td>
-                        </tr>
-                        <tr>
-                            <td>A5</td>
-                            <td>Labore, Gießerei, MakerSpace Friedberg</td>
-                        </tr>
-                        <tr>
-                            <td>A6</td>
-                            <td>Mensa</td>
-                        </tr>
-                        <tr>
-                            <td>A7</td>
-                            <td>Motorsport Friedberg</td>
-                        </tr>
-                        <tr>
-                            <td>B1, B2</td>
-                            <td>Labore, ZQE - Zentrum für Qualitätsentwicklung, IWW - Interne Wissenschaftliche Weiterbildung</td>
-                        </tr>
-                        <tr>
-                            <td>E1</td>
-                            <td>Studentenwerkstatt Games</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <div id="campus" class="text-dunkel text-center md-text-left">
+            <h2 class="text-dunkel">50 Jahre THM</h2>
+            <span>Veranstaltungen</span>
+            <span class="d-block">Info Center THM </span>
+            <span class="text-grau">Hochschulsport</span>
+          </div>
+      </div>
+        <div class="copyrights font-poppins">
+            <p class="text-grau py-5 text-center">
+                © 2022 Campus Plan 
+            </p>
+        </div>
+        </div>
 
-            </section>
+    </section>
+</foooter>
 
-            <section class="button_container">
-                <title>Buttonsektion</title>
+<!------------------------------------------------------/footer-------------------------------------------------------------------->
+<!------------------------------------------------------scrollButton--------------------------------------------------------------->
+<div class="button-container">
+    <a id="scrollBtn" href="index.html" class="bi bi-arrow-up button text-weis animate__animated animate__fadeInUp"></a>
+</div>
 
-                <button type="button" id="button_dijkstra">
-                    <span class ="button_top">Dijkstra-Wegfindung starten</span>
-                </button>
-                <button type="button" id="button_kantengewicht" onclick="ToggleKantengewicht()">
-                    <span class="button_top">Kantengewichte einblenden</span>
-                </button>
-                <button type="button" id="button_reset" onclick="window.location.reload()">
-                    <span class="button_top">Graph zurücksetzen</span>
-                </button>
 
-            </section>
 
-	        <script src="dijkstra.js"></script>
-        </main>
+<!------------------------------------------------------/scrollButton--------------------------------------------------------------->
+<!--scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="main.js"></script>
+<script src="dijkstra.js"></script>
 
-    </body>
 
+</body>
 </html>

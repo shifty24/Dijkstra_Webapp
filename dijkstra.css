@@ -1,0 +1,146 @@
+
+:root {
+	/*Farbpalette*/
+	--thm-hausgruen: #80ba24;
+	--thm-hausgrau: #4a5c66; 
+	--accent-color: #362f4b;
+	--bgColorDarker: #ececec;
+	--bgColorLighter: #fcfcfc;
+	--insideBorderColor: lightgray;	
+	--accent-color2: #7e444e;
+	/*Farbpalette*/
+}
+
+body {
+	font-size: 1em;
+	font-family: Arial;
+	background: #eee;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+button {
+	width:  25%;
+	margin: 15px;
+	padding: 15px 30px;
+	text-align: center;
+	font-family:var(--font-poppins);
+	letter-spacing: 1px;
+	color: var(--text-dunkel);
+	background: transparent;
+	transition: ease-out 0.5s;
+	border: 0px solid var(--thm-hausgruen);
+	border-radius: 50px;
+	box-shadow: inset 0 0 0 0 #535353;
+  }
+
+h1 {
+	display: flex;
+	justify-content: center;
+	width: 1500px;
+	text-align: center;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: var(--text-dunkel2);
+}
+
+p {
+	display: flex;
+	justify-content: center;
+	width: 1500px;
+	margin: 15px;
+	text-align: center;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: var(--accent-color2);
+	background: transparent;
+}
+  
+.button_container {
+	width: 1500px;
+	display: flex;
+	justify-content: center;
+	flex-flow: row;
+	list-style: none;
+	margin-top: 0px;
+	gap: 0px;
+}
+
+.baseAnim:hover {
+	opacity: 0;
+}
+
+.stopAnim:hover {
+	opacity: 1;
+}
+
+.dijkstra_wegfindung {
+	display: relative;
+}
+
+#wegfindung_basis {
+	width: 1500px;
+	background-image: url("/assets/Hintergrund.png");
+	background-size: 1500px 525px;
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+#wegfindung_kantenoverlay {
+	position: absolute;
+	top: 209x;
+	/*left: 110px;*/
+	width: 1500px;
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+
+/*Table template https://codepen.io/blackfrom80s/pen/ZEoVYyx*/
+table {
+	width: 1500px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--accent-color2);
+	border-collapse: collapse;
+	color: var(--thm-hausgrau);
+	table-layout: fixed;
+}
+
+table thead tr {
+	color: whitesmoke;
+	background-color: var(--accent-color2);
+	
+}
+
+table tbody tr {
+	border: 1px solid var(--insideBorderColor);
+	background-color: var(--bgColorDarker);
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: var(--bgColorLighter);
+}
+
+table th {
+	
+	letter-spacing: 0.075rem;
+	
+}
+
+table th,
+table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+}
+
+table th {
+	
+	letter-spacing: 0.075rem;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+	text-align: right;
+}

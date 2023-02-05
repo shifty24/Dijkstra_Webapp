@@ -1,7 +1,7 @@
 var graphAlsAdjazenzMatrixGewichtetEdgeassoziiert = [
 	[{0: 0}, {2: 2}, {1: 3}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {4: 1}, {0: 0}],
-	[{2: 2}, {0: 0}, {0: 0}, {2: 5}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
-	[{1: 3}, {0: 0}, {0: 0}, {0: 0}, {3: 6}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
+	[{2: 2}, {0: 0}, {1: 17}, {2: 5}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
+	[{1: 3}, {1: 17}, {0: 0}, {0: 0}, {3: 6}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
 	[{0: 0}, {2: 5}, {0: 0}, {0: 0}, {0: 0}, {1: 7}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
 	[{0: 0}, {0: 0}, {3: 6}, {0: 0}, {0: 0}, {2: 9}, {0: 0}, {3: 12}, {0: 0}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
 	[{0: 0}, {0: 0}, {0: 0}, {1: 7}, {2: 9}, {0: 0}, {2: 8}, {0: 0}, {3: 11}, {0: 0}, {0: 0}, {0: 0}, {0: 0}],
@@ -16,8 +16,8 @@ var graphAlsAdjazenzMatrixGewichtetEdgeassoziiert = [
 
 var graphAlsAdjazenzMatrixGewichtet = [
 	[0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0],
-	[2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-	[1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+	[2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[1, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 3, 0, 0, 2, 0, 3, 0, 0, 0, 0, 0],
 	[0, 0, 0, 1, 2, 0, 2, 0, 3, 0, 0, 0, 0],
@@ -42,7 +42,7 @@ function MinDistanzCheck(distanzArr, besuchtArr) {
 }
 
 function ButtonDeactivator () {
-	document.getElementById('button_dijkstra').style.color = 'grey';
+	document.getElementById('button_dijkstra').style.color = 'black';
 	document.getElementById('button_dijkstra').style.backgroundColor = 'lightgrey';
 }
 
@@ -175,8 +175,6 @@ function RückwaertsTraversierung(aktuellerZielknoten) {
 	var aktuelleKante;
 	var aktuellerElternknoten = elternknoten[aktuellerZielknoten];
 
-	alert("startknoten = " + startknoten + " / " + "zielknoten = " + aktuellerZielknoten + "\n" + "aktuellerElternknoten = " + aktuellerElternknoten);
-
 	do {
 		for (const prop in graphAlsAdjazenzMatrixGewichtetEdgeassoziiert[aktuellerZielknoten][aktuellerElternknoten]) {
 			console.log(aktuellerElternknoten);
@@ -223,5 +221,4 @@ var zielknotenSet = false;
 //------------------------------INITIALISIERUNG ENDE------------------------------//
 
 document.getElementById("button_dijkstra").addEventListener("click", Dijkstra);
-
 
